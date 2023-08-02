@@ -12,42 +12,40 @@
 
   <body>
     <div class="wrapper">
-      <div class="hero-bg"></div>
       <header>
         <nav>
           <div class="logo">
-            <img src="./assets/images/AGOT-logo.png" width="200" alt="" />
+            <img src="./assets/images/AGOT-logo.png" width="150" alt="" />
           </div>
         </nav>
+        <div class="quote">
+          <p>
+            We never just dream <br />
+            of success <br />
+            <span class="bold">We work towards it.</span>
+          </p>
+        </div>
       </header>
       <main>
         <section>
-          <div class="quote">
-            <p>
-              We never just dream <br />
-              of success <br />
-              <span class="bold">We work towards it.</span>
-            </p>
-          </div>
           <div class="content-wrapper">
             <div class="content">
               <h1 class="headline">
-                We are building a new aviation experience <br />
-                for you and for the future... <br />
+                We are building a new aviation experience for you and for the future... <br />
                 keep an eye on this space.
               </h1>
             </div>
           </div>
           <div class="btn-wrapper">
-            <button id="myBtn">About us</button>
-            <button>Get in touch</button>
+            <button data-modal="0" class="modal-btn">About us</button>
+            <button data-modal="1" class="modal-btn">Get in touch</button>
           </div>
         </section>
       </main>
       <footer></footer>
-      <div class="modal about-modal" id="js-modal">
+      <div class="modal about-modal">
         <div class="modal-content">
-          <span class="close">&times;</span>
+          <span data-modal="0" class="close">&times;</span>
           <div>
             <h2>Introduction</h2>
             <img class="intro-img" src="./assets/images/fastest_business_jets.jpg" alt="" />
@@ -55,36 +53,58 @@
             <p>AGOT Global Synergies is a dynamic team of experience aviation professionals dedicated to providing innovative strategies tailored to meet your needs and drive impactful results. We create solutions across a wide range of the aviation and aerospace sectors. At AGOT Global Synergies, solutions don't just come out of a box, ready to plug and play. We pride ourselves on identifying your challenges quickly and designing strategies that are fit for your purpose.</p>
             <p>Our strategic proposition combines cutting-edge technology, data-driven insights, expert guidance, and industry best practices to provide you with a viable and achievable roadmap for success. We help optimise resources, streamline operations, and set you up for success by turning complexity into opportunity while delivering measurable results. Our core services include aviation project management and consulting, recruitment process outsourcing, executive search, flight crew recruitment, flight operations auditing, flight operations solutions, flight training auditing, VIP pre-travel flight operations safety and security auditing, regulatory compliance solutions, aircraft sales and acquisition, flight crew career coaching.</p>
             <p>We believe that a successful approach to achieving goals does not have to be mundane or conventional. With our unique approach, we help both companies and individuals alike to develop a clear vision, set achievable goals, and formulate effective strategies to help drive growth and achieve success. Experience the benefits utilising industry expertise and tested knowledge along with the advantage gained from a broader approach to tailoring the services and high-quality support important for your success. We take a collaborative approach to harness and combine all the resources available to ensure quality outcome. We know the landscape and we understand the industry. Contact us today to schedule a consultation and discover how we can help you achieve your objectives.</p>
+            <div class="intro-logo">
+              <img src="./assets/images/AGOT-logo.png" width="150" alt="" />
+            </div>
           </div>
         </div>
       </div>
       <div class="modal contact-modal">
         <div class="modal-content">
-          <span class="close">&times;</span>
-          <p>Some text in the Modal..</p>
+          <span data-modal="1" class="close">&times;</span>
+          <div class="form-wrapper">
+            <h2>Inquiry Form</h2>
+            <p>We will get in touch with you shortly.</p>
+            <form action="">
+              <ul>
+                <h3>Your Name</h3>
+
+                <li class="flex">
+                  <div><input type="text" id="firstname" name="firstname" /> <label for="firstname">First Name</label></div>
+                  <div><input type="text" id="lastname" name="firstname" /> <label for="lastname">Last Name</label></div>
+                </li>
+                <h3>Your E-mail Address</h3>
+                <li>
+                  <input type="email" id="email" placeholder="ex: myname@example.com" name="email" />
+                  <label for="email">Email</label>
+                </li>
+                <h3>Leave Your Message</h3>
+                <li><textarea name="Message" cols="30" rows="5"></textarea></li>
+                <li><input type="submit" value="Submit" /></li>
+              </ul>
+            </form>
+          </div>
         </div>
       </div>
     </div>
     <script>
-      var modal = document.getElementById('js-modal');
+      var modals = document.documentElement.querySelectorAll('.modal');
+      var btns = document.querySelectorAll('.modal-btn');
+      var close = document.querySelectorAll('.close');
 
-      var btn = document.getElementById('myBtn');
-
-      var span = document.getElementsByClassName('close')[0];
-
-      btn.onclick = function () {
-        modal.style.display = 'block';
-      };
-
-      span.onclick = function () {
-        modal.style.display = 'none';
-      };
-
-      window.onclick = function (event) {
-        if (event.target == modal) {
-          modal.style.display = 'none';
-        }
-      };
+      function openModal() {
+        console.log();
+        modals[Number(this.dataset.modal)].style.display = 'block';
+      }
+      function closeModal() {
+        modals[Number(this.dataset.modal)].style.display = 'none';
+      }
+      btns.forEach((btn) => {
+        btn.addEventListener('click', openModal);
+      });
+      close.forEach((btn) => {
+        btn.addEventListener('click', closeModal);
+      });
     </script>
   </body>
 </html>
