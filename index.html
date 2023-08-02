@@ -9,13 +9,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
   </head>
+
   <body>
     <div class="wrapper">
       <div class="hero-bg"></div>
       <header>
         <nav>
           <div class="logo">
-            <img src="./assets/images/AGOT-logo.png" width="300" alt="" />
+            <img src="./assets/images/AGOT-logo.png" width="200" alt="" />
           </div>
         </nav>
       </header>
@@ -36,14 +37,54 @@
                 keep an eye on this space.
               </h1>
             </div>
-            <div class="btn-wrapper">
-              <button>About us</button>
-              <button>Get in touch</button>
-            </div>
+          </div>
+          <div class="btn-wrapper">
+            <button id="myBtn">About us</button>
+            <button>Get in touch</button>
           </div>
         </section>
       </main>
       <footer></footer>
+      <div class="modal about-modal" id="js-modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <div>
+            <h2>Introduction</h2>
+            <img class="intro-img" src="./assets/images/fastest_business_jets.jpg" alt="" />
+            <p>At AGOT Global Synergies, we are extremely proud to share our revolutionary strategic proposition with you - a game-changer coming to the wider aviation and aerospace industry that will transform the way businesses operate and thrive in today's competitive aviation and aerospace landscape.</p>
+            <p>AGOT Global Synergies is a dynamic team of experience aviation professionals dedicated to providing innovative strategies tailored to meet your needs and drive impactful results. We create solutions across a wide range of the aviation and aerospace sectors. At AGOT Global Synergies, solutions don't just come out of a box, ready to plug and play. We pride ourselves on identifying your challenges quickly and designing strategies that are fit for your purpose.</p>
+            <p>Our strategic proposition combines cutting-edge technology, data-driven insights, expert guidance, and industry best practices to provide you with a viable and achievable roadmap for success. We help optimise resources, streamline operations, and set you up for success by turning complexity into opportunity while delivering measurable results. Our core services include aviation project management and consulting, recruitment process outsourcing, executive search, flight crew recruitment, flight operations auditing, flight operations solutions, flight training auditing, VIP pre-travel flight operations safety and security auditing, regulatory compliance solutions, aircraft sales and acquisition, flight crew career coaching.</p>
+            <p>We believe that a successful approach to achieving goals does not have to be mundane or conventional. With our unique approach, we help both companies and individuals alike to develop a clear vision, set achievable goals, and formulate effective strategies to help drive growth and achieve success. Experience the benefits utilising industry expertise and tested knowledge along with the advantage gained from a broader approach to tailoring the services and high-quality support important for your success. We take a collaborative approach to harness and combine all the resources available to ensure quality outcome. We know the landscape and we understand the industry. Contact us today to schedule a consultation and discover how we can help you achieve your objectives.</p>
+          </div>
+        </div>
+      </div>
+      <div class="modal contact-modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <p>Some text in the Modal..</p>
+        </div>
+      </div>
     </div>
+    <script>
+      var modal = document.getElementById('js-modal');
+
+      var btn = document.getElementById('myBtn');
+
+      var span = document.getElementsByClassName('close')[0];
+
+      btn.onclick = function () {
+        modal.style.display = 'block';
+      };
+
+      span.onclick = function () {
+        modal.style.display = 'none';
+      };
+
+      window.onclick = function (event) {
+        if (event.target == modal) {
+          modal.style.display = 'none';
+        }
+      };
+    </script>
   </body>
 </html>
