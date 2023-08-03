@@ -105,12 +105,13 @@ button {
 }
 
 .modal-content {
-  background-color: #fefefe;
+  background-color: black;
   margin: auto;
   position: relative;
   padding: 20px 20px 40px;
   border: 1px solid #888;
   width: 80%;
+  color: #eee;
 }
 
 .close {
@@ -119,6 +120,9 @@ button {
   font-size: 28px;
   font-weight: bold;
   cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 10px;
 }
 
 .close:hover,
@@ -127,15 +131,22 @@ button {
   color: #fefefe;
 }
 
+.intro p {
+  color: #767676;
+}
+
+.intro-heading {
+  font-family: 'League Spartan', sans-serif;
+  color: #eee;
+  text-transform: uppercase;
+}
+
 .intro-img {
   width: 100%;
   outline: 1px solid white;
   border-radius: 20px;
 }
-.modal-content {
-  background-color: black;
-  color: white;
-}
+
 .contact-modal .modal-content {
   max-width: 500px;
 }
@@ -229,6 +240,9 @@ textarea {
   }
   .modal {
     font-size: 1rem;
+  }
+  .modal-content {
+    padding: 40px;
   }
   .intro-logo {
     bottom: -20px;
